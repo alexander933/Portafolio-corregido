@@ -1,11 +1,11 @@
 body {
-    font-family:'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
     text-align: center;
-    
+
 }
 
 .hero {
@@ -19,7 +19,7 @@ body {
     font-family: open Sans, sans serif;
     position: relative;
     flex-direction: column;
-
+    z-index: 1;
 }
 
 .hero::after {
@@ -30,14 +30,22 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(124, 151, 173, 0.5);
-    pointer-events: none; 
+    pointer-events: none;
+    z-index: 1;
+}
+
+.profile-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .nav {
     position: absolute;
     top: 10px;
     right: 20px;
-    
+
 }
 
 .nav ul {
@@ -45,8 +53,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    
-    
+
+
 }
 
 .nav ul li {
@@ -61,7 +69,7 @@ body {
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.5);
     transition: background 0.3s;
-    
+
 }
 
 .nav ul li a:hover {
@@ -72,32 +80,31 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid white; 
+    border: 2px solid white;
     text-align: center;
     font-size: 20px;
     font-family: open Sans, sans serif;
 }
 
-.about, .studies, .experience, .services {
+.about,
+.studies,
+.experience,
+.services {
     background: white;
     border: none;
     box-shadow: none;
     padding: 20px;
     font-size: 22px;
-    
+
 }
 
 .profile-pic {
+    margin-top: -170px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 10px;
-    top:77%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    left: 50%;
-   
+    position: relative;
+    z-index: 3;
 }
 
 .study-item h3 {
@@ -112,6 +119,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1px;
 }
+
 .skill-grid img {
     width: 50px;
     height: 50px;
@@ -140,18 +148,18 @@ footer {
     margin-bottom: 18px;
 }
 
-.studies{
+.studies {
     text-align: center;
-   background-color:#F2F2F2;
+    background-color: #F2F2F2;
 }
 
 .services {
     background-color: #D6C4C4;
 }
 
-.services h2{
+.services h2 {
     text-align: center;
-} 
+}
 
 .study-item ul {
     display: inline-block;
@@ -160,29 +168,29 @@ footer {
 
 .experience {
     text-align: center;
-    background-color:#DDD6D6;
+    background-color: #DDD6D6;
 }
 
-.skills h2{
+.skills h2 {
     text-align: center;
-    margin-bottom: 26px;  
+    margin-bottom: 26px;
 }
 
-.skills{
+.skills {
     background-color: #d9d9d9;
     border: none;
     box-shadow: none;
     padding: 20px;
-    font-size: 22px; 
+    font-size: 22px;
 }
 
-button, 
+button,
 .nav ul li a,
 .navbar-toggler {
-    all: unset; 
-    display: inline-block; 
-    padding: 10px 15px; 
-    cursor: pointer; 
+    all: unset;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 .skill-item {
@@ -190,9 +198,10 @@ button,
     flex-direction: column;
     align-items: center;
     gap: 0px;
-    padding:0px;
+    padding: 0px;
 
 }
+
 .stars {
     font-size: 20px;
     color: black;
@@ -200,10 +209,10 @@ button,
 }
 
 .service-item img {
-    width: 60px; 
-    height: 60px; 
-    object-fit: contain; 
-    margin-bottom: 10px; 
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
 .service-item {
@@ -215,113 +224,166 @@ button,
 }
 
 .skill-item img {
-    width: 60px;  
-    height: 60px; 
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     padding: 0;
 }
 
 .footer-container {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 
+.footer-container .Logo {
+    width: 200px;
+    height: auto;
+}
 
 .footer-info p {
     margin: 10px;
     display: flex;
     align-items: center;
-    gap: 13px; 
+    gap: 13px;
+}
 
+@media (max-width: 576px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
+
 .skill-grid {
-    display: grid;                      
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 10px;                            
-    width: 80%;                           
-    margin: 0 auto;                       
-    justify-items: center;        
-}
-.skill-grid .skill-item:nth-child(9) {
-    grid-column: 2;
-}
-.skill-grid .skill-item:nth-child(10) {
-    grid-column: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .studies h2 {
     margin-bottom: 19px;
 }
 
-.experience h2{
-    margin-bottom: 19px;  
+.experience h2 {
+    margin-bottom: 19px;
 }
 
 
-.services h2{
-    margin-bottom: 20px;  
+.services h2 {
+    margin-bottom: 20px;
 }
 
 
+.hero h1 {
+    font-size: 2.5rem;
+   
+}
 
-/* Dispositivos pequeños (celulares) */
+.hero p {
+    font-size: 1.2rem;
+   
+}
+
+/* ============================
+     Tablet (pantallas <= 992px)
+     ============================ */
+@media (max-width: 992px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =============================
+     Teléfonos grandes/medianos
+     (pantallas <= 768px)
+     ============================= */
+@media (max-width: 768px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+        margin-top: -80px;
+    }
+}
+
+/* ============================
+     Teléfonos pequeños
+     (pantallas <= 576px)
+     ============================ */
 @media (max-width: 576px) {
-    .profile-pic {
-      position: static;
-      transform: none;
-      margin-top: 20px;
-    }
-  
-    .skill-grid,
-    .service-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-      padding: 10px;
-    }
-  
+
     .hero {
-      font-size: 16px;
-      text-align: center;
-      padding: 20px;
+        height: auto;
+        padding: 20px 0;
     }
-  
-    .hero-content {
-      font-size: 16px;
-      padding: 15px;
+
+    
+    .hero h1 {
+        font-size: 1.8rem;
     }
-  }
-  
-  /* Dispositivos medianos (tablets) */
-  @media (min-width: 577px) and (max-width: 991px) {
-    .skill-grid,
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
     .service-grid {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
-  
+
     .profile-pic {
-      position: static;
-      transform: none;
-      margin-top: 30px;
+        width: 150px;
+        height: 150px;
+        margin-top: -50px;
     }
-  
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .hero {
-      font-size: 18px;
-    }
-  }
-  
- 
+}
