@@ -308,7 +308,7 @@ button,
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .skill-grid {
@@ -374,7 +374,10 @@ button,
 
     
     .skill-grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Cambiado de 1fr a 2 columnas */
+        gap: 10px; /* Puedes ajustar el espacio entre bloques */
+        justify-items: center; /* Centra los ítems si es necesario */
     }
 
     .service-grid {
@@ -385,5 +388,162 @@ button,
         width: 150px;
         height: 150px;
         margin-top: -50px;
+    }
+}
+
+@media (max-width: 290px) {
+    /* Ajuste del grid de habilidades */
+    .skill-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 0 5px; /* Reduce el padding lateral */
+    }
+
+    /* Ajuste del contenedor del footer */
+    .footer-container {
+        flex-direction: column;
+        padding: 0 5px; /* Reduce el padding lateral */
+        gap: 5px;
+    }
+
+    .footer-info p {
+        font-size: 0.8rem;
+        text-align: center;
+        white-space: normal; /* Permite que el texto se rompa en varias líneas */
+    }
+
+    /* Ajustes en la sección del héroe */
+    .hero {
+        padding: 10px; /* Reduce el padding global */
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+        padding: 0 5px;
+        word-break: break-word;
+    }
+
+    .hero p {
+        font-size: 0.75rem;
+        padding: 0 5px;
+    }
+
+    /* Ajuste en la imagen de perfil */
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Ajuste en el menú de navegación */
+    .nav {
+        right: 5px; /* Acerca el menú al borde */
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav ul li {
+        margin: 5px 0;
+    }
+}
+
+
+@media (max-width: 211px) {
+    /* Eliminamos márgenes y paddings horizontales en secciones principales */
+    body,
+    .hero,
+    .about,
+    .studies,
+    .experience,
+    .skills,
+    .services,
+    footer {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Ajustes en el menú de navegación */
+    .nav {
+        right: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .nav ul,
+    .nav ul li {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Reducimos el padding y la tipografía en el héroe */
+    .hero-content {
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+    .hero h1 {
+        font-size: 1rem;
+        padding: 0 5px;
+        word-break: break-word;
+    }
+    .hero p {
+        font-size: 0.6rem;
+        padding: 0 5px;
+        word-break: break-word;
+    }
+
+    /* Ajuste en la imagen de perfil */
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+    }
+
+    /* Ajustamos el grid de habilidades */
+    .skill-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 0 5px;
+    }
+    .skill-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .stars {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    /* Ajuste en el grid de servicios */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 0 5px;
+    }
+    .service-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Ajustes en el footer */
+    .footer-container {
+        flex-direction: column;
+        padding: 5px;
+        gap: 5px;
+    }
+    .footer-info p {
+        font-size: 0.6rem;
+        margin: 0;
+        word-break: break-word;
+    }
+    
+    /* Aseguramos que las imágenes no excedan el ancho */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
